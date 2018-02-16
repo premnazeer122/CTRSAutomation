@@ -6,6 +6,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.Runner.Retry;
+
 
 public class add_Master_Agent {
 	
@@ -20,7 +22,7 @@ public void login() throws Exception{
 	com.uitilityfiles.Common_Ctrslogin login = new com.uitilityfiles.Common_Ctrslogin();
 	driver=login.Ctrslogin();
 }
-	@Test
+	@Test(retryAnalyzer=Retry.class)
 	  public void testAddAgent() throws Exception {
 	    
 	    driver.findElement(By.cssSelector("#p7menubar > #master > a")).click();

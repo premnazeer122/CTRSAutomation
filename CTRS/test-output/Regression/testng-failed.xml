@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Regression]">
+  <test name="sprint1(failed)">
+    <classes>
+      <class name="com.Automation_CTRS.CTRS.newBooking">
+        <methods>
+          <include name="testBooking"/>
+        </methods>
+      </class> <!-- com.Automation_CTRS.CTRS.newBooking -->
+      <class name="com.Automation_CTRS.CTRS.randomSelectfromDropdown">
+        <methods>
+          <include name="dropDonw_randomSelect"/>
+          <include name="elasticsearch_dropDown_randomSelect"/>
+          <include name="login"/>
+        </methods>
+      </class> <!-- com.Automation_CTRS.CTRS.randomSelectfromDropdown -->
+    </classes>
+  </test> <!-- sprint1(failed) -->
+</suite> <!-- Failed suite [Regression] -->
