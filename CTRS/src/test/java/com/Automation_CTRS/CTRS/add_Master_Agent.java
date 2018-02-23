@@ -6,23 +6,20 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.Runner.Retry;
+import com.uitilityfiles.Common_Ctrslogin;
 
 
 public class add_Master_Agent {
 	
 WebDriver driver;
 
-
-
-
-@BeforeClass(alwaysRun = true)
+@BeforeClass()
 public void login() throws Exception{
 	
-	com.uitilityfiles.Common_Ctrslogin login = new com.uitilityfiles.Common_Ctrslogin();
+	Common_Ctrslogin login = new Common_Ctrslogin();
 	driver=login.Ctrslogin();
 }
-	@Test(retryAnalyzer=Retry.class)
+	@Test()/*retryAnalyzer=Retry.class*/
 	  public void testAddAgent() throws Exception {
 	    
 	    driver.findElement(By.cssSelector("#p7menubar > #master > a")).click();

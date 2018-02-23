@@ -33,9 +33,14 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.uitilityfiles.configReader;
+
 public class newBooking {
+	
+	configReader config=new configReader();
 	private WebDriver driver;
 	private String baseUrl;
+	
 
 	@BeforeClass(alwaysRun = true)
 	public void setUp() throws Exception {
@@ -48,8 +53,8 @@ public class newBooking {
 	@Test(priority = 1)
 	public void new_tBooking() throws InterruptedException {
 		driver.get(baseUrl);
-		driver.findElement(By.id("username")).sendKeys("prem@saaragh.com");
-		driver.findElement(By.id("password")).sendKeys("12345678p");
+		driver.findElement(By.id("username")).sendKeys(config.getusername());
+		driver.findElement(By.id("password")).sendKeys(config.getpsw());
 		driver.findElement(By.xpath("//button[@type='button']")).click();
 		Thread.sleep(1500L);
 		driver.findElement(By.cssSelector("#p7menubar > #tourbooking > a")).click();

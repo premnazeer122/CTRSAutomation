@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Regression">
-  <test thread-count="5" name="sprint1">
-    <classes>
+<suite name="Regression" thread-count="5">
+   <test name="ChromeTest">
+<parameter name="browser" value="Chrome" />
+   <classes>
       <class name="com.Automation_CTRS.CTRS.Ctrs_add_County"/>
+    </classes>
+    </test>
+<test name="FirefoxTest">
+<parameter name="browser" value="Firefox" />
+     <classes>
       <class name="com.Automation_CTRS.CTRS.newBooking"/>
       <class name="com.Automation_CTRS.CTRS.randomSelectfromDropdown"/>
     </classes>

@@ -31,28 +31,25 @@ div.shootout {padding:2em;border:3px #4854A8 solid}
 <body>
 <table cellspacing="0" cellpadding="0" class="result">
 <tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
-<tr><td style="text-align:left;padding-right:2em">sprint1</td><td class="numi">0</td><td class="numi">0</td><td class="numi_attn">3</td><td class="numi">0</td><td class="numi">1,805.1 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+<tr><td style="text-align:left;padding-right:2em">Default test</td><td class="numi">0</td><td class="numi">0</td><td class="numi">0</td><td class="numi_attn">3</td><td class="numi">81.3 seconds</td><td class="numi"></td><td class="numi"></td></tr>
 </table>
 <table cellspacing="0" cellpadding="0" class="passed" id="summary">
 <tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
-<tr><th colspan="4">sprint1 &#8212; failed (configuration methods)</th></tr>
-<tr class="failedodd"><td rowspan="1">com.Automation_CTRS.CTRS.randomSelectfromDropdown</td><td><a href="#m1"><b>login</b>  </a></td><td class="numi">1</td><td>1518774617894</td><td class="numi">0</td></tr>
-<tr><th colspan="4">sprint1 &#8212; skipped (configuration methods)</th></tr>
-<tr class="skippedodd"><td rowspan="1">com.Automation_CTRS.CTRS.newBooking</td><td><a href="#m2"><b>setUp</b>  </a></td><td class="numi">1</td><td>1518776422953</td><td class="numi">0</td></tr>
-<tr><th colspan="4">sprint1 &#8212; skipped</th></tr>
-<tr class="skippedodd"><td rowspan="2">com.Automation_CTRS.CTRS.randomSelectfromDropdown</td><td><a href="#m3"><b>dropDonw_randomSelect</b>  </a></td><td class="numi">1</td><td>1518776422965</td><td class="numi">2</td></tr><tr class="skippedodd"><td><a href="#m4"><b>elasticsearch_dropDown_randomSelect</b>  </a></td><td class="numi">1</td><td>1518776422968</td><td class="numi">1</td></tr>
-<tr class="skippedeven"><td rowspan="1">com.Automation_CTRS.CTRS.newBooking</td><td><a href="#m5"><b>testBooking</b>  </a></td><td class="numi">1</td><td>1518776422960</td><td class="numi">2</td></tr>
+<tr><th colspan="4">Default test &#8212; failed</th></tr>
+<tr class="failedodd"><td rowspan="3">com.Automation_CTRS.CTRS.newBooking</td><td><a href="#m1"><b>Booking_Payment_confirmed</b>  </a></td><td class="numi">1</td><td>1519306615162</td><td class="numi">15087</td></tr><tr class="failedodd"><td><a href="#m2"><b>new_tBooking</b>  </a></td><td class="numi">1</td><td>1519306594209</td><td class="numi">20935</td></tr><tr class="failedodd"><td><a href="#m3"><b>print_Eticket</b>  </a></td><td class="numi">1</td><td>1519306630249</td><td class="numi">40119</td></tr>
 </table>
-<h1>sprint1</h1>
-<h2 id="m1">com.Automation_CTRS.CTRS.randomSelectfromDropdown:login</h2>
+<h1>Default test</h1>
+<h2 id="m1">com.Automation_CTRS.CTRS.newBooking:print_Eticket</h2>
 <div style="padding-left:3em">
-<p>Timed out waiting for page load.
-Command duration or timeout: 1800.12 seconds
+<p>Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;printeticket&quot;}
+Command duration or timeout: 40.08 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;2.48.2&apos;, revision: &apos;41bccdd10cf2c0560f637404c2d96164b67d9d67&apos;, time: &apos;2015-10-09 13:08:06&apos;
 System info: host: &apos;DESKTOP-FJB91G0&apos;, ip: &apos;192.168.0.65&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_144&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=32.0.2, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: b5a7c2d0-0457-4ea5-ab64-cf0e5521a754</p>
+Session ID: a3f21a27-522b-45d6-86ca-319513a0fec6
+*** Element info: {Using=id, value=printeticket}</p>
 sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 <br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 <br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -60,27 +57,54 @@ sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 <br/>at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
 <br/>at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
 <br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:647)
-<br/>at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:311)
-<br/>at com.uitilityfiles.Common_Ctrslogin.Ctrslogin(Common_Ctrslogin.java:21)
-<br/>at com.Automation_CTRS.CTRS.randomSelectfromDropdown.login(randomSelectfromDropdown.java:25)
-<br/>23 lines not shown
-<p>Caused by Timed out waiting for page load.
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:403)
+<br/>at org.openqa.selenium.By$ById.findElement(By.java:218)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:345)
+<br/>at com.Automation_CTRS.CTRS.newBooking.print_Eticket(newBooking.java:169)
+<br/>25 lines not shown
+<p>Caused by Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;printeticket&quot;}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;2.48.2&apos;, revision: &apos;41bccdd10cf2c0560f637404c2d96164b67d9d67&apos;, time: &apos;2015-10-09 13:08:06&apos;
 System info: host: &apos;DESKTOP-FJB91G0&apos;, ip: &apos;192.168.0.65&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_144&apos;
 Driver info: driver.version: unknown</p>
-&lt;anonymous class&gt;.Utils.initWebLoadingListener/&lt;(file:///C:/Users/Chandru/AppData/Local/Temp/anonymous8033132456638037208webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9010)
-<br/>at &lt;anonymous class&gt;.WebLoadingListener/e(file:///C:/Users/Chandru/AppData/Local/Temp/anonymous8033132456638037208webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5114)
-<br/>at &lt;anonymous class&gt;.WebLoadingListener/&lt;(file:///C:/Users/Chandru/AppData/Local/Temp/anonymous8033132456638037208webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:5122)
-<br/>at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/Chandru/AppData/Local/Temp/anonymous8033132456638037208webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:621)
+&lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/Chandru/AppData/Local/Temp/anonymous6691902224596331214webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10659)
+<br/>at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/Chandru/AppData/Local/Temp/anonymous6691902224596331214webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:621)
 <br/>1 lines not shown
 </div>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m2">com.Automation_CTRS.CTRS.newBooking:setUp</h2>
+<h2 id="m2">com.Automation_CTRS.CTRS.newBooking:new_tBooking</h2>
+<div style="padding-left:3em">
+<p>No alert is present (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 2.34 seconds
+Build info: version: &apos;2.48.2&apos;, revision: &apos;41bccdd10cf2c0560f637404c2d96164b67d9d67&apos;, time: &apos;2015-10-09 13:08:06&apos;
+System info: host: &apos;DESKTOP-FJB91G0&apos;, ip: &apos;192.168.0.65&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_144&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=32.0.2, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: a3f21a27-522b-45d6-86ca-319513a0fec6</p>
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+<br/>at java.lang.reflect.Constructor.newInstance(Unknown Source)
+<br/>at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+<br/>at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:647)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:670)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:1007)
+<br/>at com.Automation_CTRS.CTRS.newBooking.new_tBooking(newBooking.java:64)
+<br/>25 lines not shown
+</div>
 <p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m3">com.Automation_CTRS.CTRS.randomSelectfromDropdown:dropDonw_randomSelect</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m4">com.Automation_CTRS.CTRS.newBooking:testBooking</h2>
-<p class="totop"><a href="#summary">back to summary</a></p>
-<h2 id="m5">com.Automation_CTRS.CTRS.randomSelectfromDropdown:elasticsearch_dropDown_randomSelect</h2>
+<h2 id="m3">com.Automation_CTRS.CTRS.newBooking:Booking_Payment_confirmed</h2>
+<div style="padding-left:3em">
+<p>expected [Booking Summary] but found [Dashboard]</p>
+org.testng.Assert.fail(Assert.java:94)
+<br/>at org.testng.Assert.failNotEquals(Assert.java:494)
+<br/>at org.testng.Assert.assertEquals(Assert.java:123)
+<br/>at org.testng.Assert.assertEquals(Assert.java:176)
+<br/>at org.testng.Assert.assertEquals(Assert.java:186)
+<br/>at com.Automation_CTRS.CTRS.newBooking.Booking_Payment_confirmed(newBooking.java:140)
+<br/>25 lines not shown
+</div>
 <p class="totop"><a href="#summary">back to summary</a></p>
 </body></html>

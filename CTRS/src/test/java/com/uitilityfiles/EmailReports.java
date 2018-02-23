@@ -24,8 +24,6 @@ public static void main(String[] args) {
 	config=new configReader();
 	
 	
-	/*final String username = "prem@saaragh.com";
-    final String password = "9942011763p";*/
 
  // Create object of Property file
  		Properties props = new Properties();
