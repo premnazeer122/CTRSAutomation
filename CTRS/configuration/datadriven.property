@@ -1,8 +1,18 @@
 username =prem@saaragh.com
-password =9942011763p
-psw = 12345678p
+password =12345678p
+psw = 9942011763p
+
+
+
+
 browserName=firefox
+
 browserName1=chrome
 ChromeDriver=D:\\Workspace\\CTRSAutomation\\chromedriver.exe
+
 URL=http://uatserver.info/ctrsArchUIv3/
+
 ExcelPath=
+
+username1 = admin@nfsg.com
+password1 =admin123

@@ -20,8 +20,7 @@ public class EmailReports {
 
 public static void main(String[] args) {
 
-	final configReader config;
-	config=new configReader();
+	 final CommonMethods method=new CommonMethods();
 	
 	
 
@@ -46,7 +45,7 @@ public static void main(String[] args) {
  		// This will handle the complete authentication
  		Session session = Session.getInstance(props, new javax.mail.Authenticator() {
  		    protected PasswordAuthentication getPasswordAuthentication() {
- 		        return new PasswordAuthentication(config.getusername(),config.getpassword());
+ 		        return new PasswordAuthentication(method.getusername(),method.getpassword());
   
  					}
   
@@ -56,7 +55,7 @@ public static void main(String[] args) {
  			Message message = new MimeMessage(session);
  			 
 			// Set the from address
-			message.setFrom(new InternetAddress(config.getusername()));
+			message.setFrom(new InternetAddress(method.getusername()));
  
 			// Set the recipient address
 			message.setRecipients(Message.RecipientType.TO,InternetAddress.parse("sami@saaragh.com"));

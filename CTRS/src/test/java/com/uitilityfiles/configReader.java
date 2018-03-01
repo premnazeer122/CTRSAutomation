@@ -41,44 +41,5 @@ public class configReader {
 
 	}
 
-	/**
-	 * Created all commonly used methods in this java file and can be called any
-	 * where by call this class and it's methods.
-	 */
-
-	public String getChromePath() {
-		String path = data.getProperty("ChromeDriver");
-		return path;
-
-	}
-
-	public String getURL() {
-		return data.getProperty("URL");
-	}
-
-	public String getusername() {
-		return data.getProperty("username");
-
-	}
-
-	public String getpassword() {
-		return data.getProperty("password");
-
-	}
-
-	public String getpsw() {
-		return data.getProperty("psw");
-
-	}
-
-	public String getFireox_driver() {
-		return data.getProperty("browserName");
-
-	}
-
-	public String getChrome_driver() {
-		return data.getProperty("browserName1");
-
-	}
-
+	
 }

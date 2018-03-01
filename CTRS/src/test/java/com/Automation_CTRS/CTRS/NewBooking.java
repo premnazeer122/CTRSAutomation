@@ -33,37 +33,31 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.uitilityfiles.configReader;
+import com.uitilityfiles.Common_Ctrslogin;
 
-public class newBooking {
+public class NewBooking {
 	
-	configReader config=new configReader();
-	private WebDriver driver;
-	private String baseUrl;
+	Common_Ctrslogin login=new Common_Ctrslogin();
+	public WebDriver driver;
 	
 
 	@BeforeClass(alwaysRun = true)
 	public void setUp() throws Exception {
 		driver = new FirefoxDriver();
 		driver.manage().window().maximize();
-		baseUrl = "http://uatserver.info/ctrsArchUIv3/";
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		driver=login.Ctrslogin();
 	}
 
 	@Test(priority = 1)
 	public void new_tBooking() throws InterruptedException {
-		driver.get(baseUrl);
-		driver.findElement(By.id("username")).sendKeys(config.getusername());
-		driver.findElement(By.id("password")).sendKeys(config.getpsw());
-		driver.findElement(By.xpath("//button[@type='button']")).click();
-		Thread.sleep(1500L);
-		driver.findElement(By.cssSelector("#p7menubar > #tourbooking > a")).click();
-		Thread.sleep(1500L);
-
-		// accept alter
-		driver.switchTo().alert().accept();
-
-		Thread.sleep(1500L);
+		
+		Thread.sleep(30000L);
+	    driver.findElement(By.xpath("(//li[@id='tourbooking']/a)[2]")).click();
+	        
+	    Thread.sleep(30000L);
+	    driver.switchTo().alert().accept();
+	    Thread.sleep(8000L);
 		driver.findElement(By.id("back_to_tour_booking")).click();
 
 		// select agent
@@ -90,8 +84,10 @@ public class newBooking {
 
 		// visit date picker
 		Thread.sleep(7000L);
-		driver.findElement(By.xpath(".//*[@id='dp2']")).click();
-		WebElement dateBox = driver.findElement(By.xpath("html/body/div[10]/div[1]/table/tbody/tr[4]/td[5]"));
+		driver.findElement(By.xpath("//*[@id='dp2']")).click();
+		Thread.sleep(5000L);
+		WebElement dateBox = driver.findElement(By.xpath("/html/body/div[10]/div[1]/table/tbody/tr[5]/td[7]"));
+		Thread.sleep(2000L);
 		dateBox.click();
 
 		// enter the number of child

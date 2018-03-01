@@ -1,14 +1,8 @@
 package com.uitilityfiles;
 
-import java.util.List;
-import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriver.Navigation;
-import org.openqa.selenium.WebDriver.Options;
-import org.openqa.selenium.WebDriver.TargetLocator;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -63,7 +57,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 	 * driver; }
 	 */
 
-	public class DriverFactory  {
+	public class Browser  {
 
 		static WebDriver driver;
 		
@@ -82,64 +76,13 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 				driver = new InternetExplorerDriver();
 				}
 			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			driver.get(url);
 			return driver;
 
 		}
 
-		public void close() {
-			driver.close();
-
-		}
-
-		public WebElement findElement(By arg0) {
-			return driver.findElement(arg0);
-		}
-
-		public List<WebElement> findElements(By arg0) {
-			return driver.findElements(arg0);
-		}
-
-		public void get(String arg0) {
-			driver.get(arg0);
-
-		}
-
-		public String getCurrentUrl() {
-			return driver.getCurrentUrl();
-		}
-
-		public String getPageSource() {
-			return driver.getPageSource();
-		}
-
-		public String getTitle() {
-			return driver.getTitle();
-		}
-
-		public String getWindowHandle() {
-			return driver.getWindowHandle();
-		}
-
-		public Set<String> getWindowHandles() {
-			return driver.getWindowHandles();
-		}
-
-		public Options manage() {
-			return driver.manage();
-		}
-
-		public Navigation navigate() {
-			return driver.navigate();
-		}
-
-		public void quit() {
-			driver.quit();
-		}
-
-		public TargetLocator switchTo() {
-			return driver.switchTo();
-		}
+		
 
 	}
 

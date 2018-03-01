@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 import com.uitilityfiles.Common_Ctrslogin;
 
 
-public class add_Master_Agent {
+public class Add_Master_Agent {
 	
 WebDriver driver;
 

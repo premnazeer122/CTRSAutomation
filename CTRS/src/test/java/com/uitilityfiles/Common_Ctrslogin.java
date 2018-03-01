@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class Common_Ctrslogin {
-	private WebDriver driver;
+	public WebDriver driver;
 	
 	//This are object for the id locators which can be used only object name.
 	By username = By.id("username");
@@ -14,13 +14,13 @@ public class Common_Ctrslogin {
 	
 	
 	
-	configReader config=new configReader(); 
+	CommonMethods method=new CommonMethods(); 
 	public WebDriver Ctrslogin() throws Exception {
 		/*driver=Browser.browsersetUp();
 		String baseUrl = "http://uatserver.info/ctrsArchUIv3/";*/
-		driver=DriverFactory.DriverStart(config.getFireox_driver(), config.getURL());
-		driver.findElement(username).sendKeys("admin@nfsg.com");
-		driver.findElement(password).sendKeys("admin123");
+		driver=Browser.DriverStart(method.getChrome_driver(), method.getURL());
+		driver.findElement(username).sendKeys(method.getusername1());
+		driver.findElement(password).sendKeys(method.getpassword1());
 		driver.findElement(Signin).click();
 		return driver;
 		

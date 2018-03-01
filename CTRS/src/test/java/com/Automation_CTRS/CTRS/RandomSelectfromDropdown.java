@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 import com.uitilityfiles.Common_Ctrslogin;
 
-public class randomSelectfromDropdown {
+public class RandomSelectfromDropdown {
 
 	WebDriver driver;
 	ArrayList<String>randomselect;
