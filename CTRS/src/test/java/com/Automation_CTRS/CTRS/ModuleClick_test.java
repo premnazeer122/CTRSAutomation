@@ -1,6 +1,5 @@
 package com.Automation_CTRS.CTRS;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,81 +8,89 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 import com.uitilityfiles.CommonMethods;
 import com.uitilityfiles.Common_Ctrslogin;
 
-
 public class ModuleClick_test {
 
+	// Creating ExtentReport and ExtentTest reference values
+	ExtentReports report;
+	ExtentTest logger;
+
 	public WebDriver driver;
-	CommonMethods call_method=new CommonMethods();
-	Common_Ctrslogin login= new Common_Ctrslogin();
+	CommonMethods call_method = new CommonMethods();
+	Common_Ctrslogin login = new Common_Ctrslogin();
+
 	@BeforeTest
-	public void setup() throws Exception{
+	public void setup() throws Exception {
 		System.out.println("Chrome browser started");
-		driver=login.Ctrslogin();
+		driver = login.Ctrslogin();
 		System.out.println("Logged in");
+		// Create object for Report with filepath
+				report = new ExtentReports("./Reports/CheckModules_clickfunctionality");
+
+				// start the test report
+				logger = report.startTest("ClickFunctionality_MainModules");
+
+
 	}
-	
-	@Test(priority=4)
-	public void masterMenu() throws InterruptedException{
+
+	@Test()
+	public void CTRSModules() throws InterruptedException {
+
 		
-	System.out.println("Waiting time started");
-	
-	
-	System.out.println("After Wait time click on Master menu");
-	new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//ul[@id='p7menubar']/li[2]/a")));
-	System.out.println("Wait time stopped");
-	driver.findElement(By.xpath(".//ul[@id='p7menubar']/li[2]/a")).click();
+		System.out.println("Waiting time started");
+		logger.log(LogStatus.INFO, "Click on Booking menu");
+		Thread.sleep(20000L);
+		System.out.println("After Wait click on booking menu");
+		driver.findElement(By.xpath("(//a[contains(text(),'Book Services')])[2]")).click();
+		Thread.sleep(3000L);
+		driver.switchTo().alert().accept();
+		logger.log(LogStatus.PASS, "Booking menu is Clicked");
+
+		Thread.sleep(3000L);
+		logger.log(LogStatus.INFO, "Click on Master menu");
+		System.out.println("After Wait time click on Master menu");
+		new WebDriverWait(driver, 30).until(
+				ExpectedConditions.visibilityOfElementLocated(By.xpath("(//a[contains(text(),'Master Forms')])[2]")));
+		System.out.println("Wait time stopped");
+		driver.findElement(By.xpath("(//a[contains(text(),'Master Forms')])[2]")).click();
+		logger.log(LogStatus.PASS, "Master Menu is clicked");
+
+		Thread.sleep(30000L);
+		logger.log(LogStatus.INFO, "Click on Report menu");
+		System.out.println("After Wait time click on report menu");
+
+		driver.findElement(By.xpath("(//a[contains(text(),'Reports')])[2]")).click();
+		logger.log(LogStatus.PASS, "Clicked on Report menu");
+
+		Thread.sleep(20000L);
+		logger.log(LogStatus.INFO, "Click on Permission menu");
+		System.out.println("After Wait time click on premission menu");
+		driver.findElement(By.xpath("(//a[contains(text(),'User Permission')])[2]")).click();
+		logger.log(LogStatus.PASS, "Clicked on Permission menu");
+
+		Thread.sleep(20000L);
+		logger.log(LogStatus.INFO, "Click on Dashboard menu");
+		driver.findElement(By.xpath("(//a[contains(text(),'Dashboard')])[2]")).click();
+		logger.log(LogStatus.PASS, "Clicked on Dashboard menu");
+		Thread.sleep(30000L);
+		report.endTest(logger);
+		report.flush();
+		Thread.sleep(2000L);
+		System.out.println("Open the test report");
+		driver.get("D:\\Workspace\\CTRSAutomation\\CTRS\\Reports\\CheckModules_clickfunctionality");
+		System.out.println("Test report in opened");
 	}
-	
-	@Test(priority=2)
-	public void report() throws InterruptedException{
+
+	@AfterTest
+	public void closebrowser() throws Exception {
 		
 		Thread.sleep(30000L);
-		System.out.println("After Wait time click on report menu");
-	
-		driver.findElement(By.xpath("(//a[contains(text(),'Reports')])[2]")).click();
-	
+		driver.close();
 	}
-	
-	@Test(priority=3)
-	public void permission() throws InterruptedException{
-	System.out.println("After Wait time click on premission menu");
-	driver.findElement(By.xpath(".//*[@id='p7menubar']/li[5]/a")).click();
-	Thread.sleep(20000L);
-	}
-	
-	@Test(priority=1)
-	public void bookingMenu() throws InterruptedException{
-	
-	
-	Thread.sleep(30000L);
-	System.out.println("After Wait time click on booking menu");
-    driver.findElement(By.xpath("(//li[@id='tourbooking']/a)[2]")).click();
-	Thread.sleep(3000L);
-	driver.switchTo().alert().accept();
-		
-	/*int ok_size=driver.findElements(By.xpath(".//div[@id='menuwrapper']/ul/li[2][@class='menu']/a")).size();
 
-	driver.findElements(By.xpath(".//div[@id='menuwrapper']/ul/li[2][@class='menu']/a")).get(ok_size-1).click();
-	
-	new WebDriverWait(driver, 60).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//div[@id='menuwrapper']/ul/li[2][@class='menu']/a")));
-	driver.findElement(By.xpath(".//div[@id='menuwrapper']/ul/li[2][@class='menu']/a")).click();
-	int x = driver.findElement(By.xpath(".//div[@id='menuwrapper']/ul/li[2][@class='menu']/a")).getLocation().getX();
-	
-	int y = driver.findElement(By.xpath(".//div[@id='menuwrapper']/ul/li[2][@class='menu']/a")).getLocation().getY();
-	System.out.println("X cordinates" + x);
-	System.out.println("Y cordinates" + y);*/
-	
-	
-	}
-	
-	@AfterTest
-	public void closebrowser(){
-	driver.close();
-	}
-			}
-	
-
-
+}

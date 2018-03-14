@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.Automation_CTRS.CTRS.newBooking">
+      <class name="com.Automation_CTRS.CTRS.AgentCredit_Topup">
         <methods>
-          <include name="new_tBooking"/>
-          <include name="Booking_Payment_confirmed"/>
-          <include name="print_Eticket"/>
           <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testUntitledTestCase"/>
         </methods>
-      </class> <!-- com.Automation_CTRS.CTRS.newBooking -->
+      </class> <!-- com.Automation_CTRS.CTRS.AgentCredit_Topup -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -10,8 +10,8 @@
 <test name="FirefoxTest">
 <parameter name="browser" value="Firefox" />
      <classes>
-      <class name="com.Automation_CTRS.CTRS.newBooking"/>
-      <class name="com.Automation_CTRS.CTRS.randomSelectfromDropdown"/>
+      <class name="com.Automation_CTRS.CTRS.NewBooking"/>
+      <class name="com.Automation_CTRS.CTRS.RandomSelectfromDropdown"/>
     </classes>
   </test> <!-- sprint1 -->
 </suite> <!-- Regression -->

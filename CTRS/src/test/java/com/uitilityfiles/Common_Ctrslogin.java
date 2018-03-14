@@ -16,9 +16,8 @@ public class Common_Ctrslogin {
 	
 	CommonMethods method=new CommonMethods(); 
 	public WebDriver Ctrslogin() throws Exception {
-		/*driver=Browser.browsersetUp();
-		String baseUrl = "http://uatserver.info/ctrsArchUIv3/";*/
-		driver=Browser.DriverStart(method.getChrome_driver(), method.getURL());
+		
+		driver=Browser.DriverStart(method.getFireox_driver(), method.getURL());
 		driver.findElement(username).sendKeys(method.getusername1());
 		driver.findElement(password).sendKeys(method.getpassword1());
 		driver.findElement(Signin).click();

@@ -7,28 +7,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
-
-	/*
-	 * private StringBuffer verificationErrors = new StringBuffer(); private
-	 * static WebDriver driver;
-	 * 
-	 * 
-	 * public static WebDriver browsersetUp() throws Exception { FirefoxDriver
-	 * driver = new FirefoxDriver(); driver.manage().window().maximize();
-	 * driver.manage().timeouts().implicitlyWait(45, TimeUnit.SECONDS); return
-	 * driver;
-	 * 
-	 * 
-	 * } public void tearDown() throws Exception { driver.quit(); String
-	 * verificationErrorString = verificationErrors.toString(); if
-	 * (!"".equals(verificationErrorString)) { fail(verificationErrorString); }
-	 * 
-	 * } }
-	 */
-
-	/*
-	 * private static final String browser = null; static WebDriver driver;
-	 */
 	/**
 	 * This function will execute before each Test tag in testng.xml
 	 * 
@@ -36,27 +14,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 	 * 
 	 * @throws Exception
 	 */
-
-	/*
-	 * public WebDriver browsersetUp() throws Exception {
-	 * 
-	 * // Check if parameter passed from TestNG is 'firefox' if
-	 * (browser.equalsIgnoreCase("firefox")) { // create firefox instance
-	 * System.setProperty("webdriver.firefox.marionette", ".\\geckodriver.exe");
-	 * driver = new FirefoxDriver(); } // Check if parameter passed as 'chrome'
-	 * else if (browser.equalsIgnoreCase("chrome")) { // set path to
-	 * chromedriver.exe System.setProperty("webdriver.chrome.driver",
-	 * "D:\\Workspace\\CTRSAutomation\\chromedriver.exe"); // create Chrome
-	 * instance driver = new ChromeDriver(); } // Check if parameter passed as
-	 * 'Edge' else if (browser.equalsIgnoreCase("Edge")) { // set path to
-	 * Edge.exe System.setProperty("webdriver.edge.driver",
-	 * ".\\MicrosoftWebDriver.exe"); // create Edge instance driver = new
-	 * EdgeDriver(); } else { // If no browser passed throw exception throw new
-	 * Exception("Browser is not correct"); }
-	 * driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); return
-	 * driver; }
-	 */
-
+	
 	public class Browser  {
 
 		static WebDriver driver;
@@ -67,13 +25,16 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 
 			if (browserName.equalsIgnoreCase("chrome")){
 				System.setProperty("webdriver.chrome.driver", "D:\\Workspace\\CTRSAutomation\\chromedriver.exe");
+				System.out.println("Chrome driver is selected and started");
 				driver = new ChromeDriver();
 			}
 				else if (browserName.equalsIgnoreCase("firefox")){
 				driver = new FirefoxDriver();
+				System.out.println("Firefox driver is selected and started");
 				}
 				else if (browserName.equalsIgnoreCase("ie")){
 				driver = new InternetExplorerDriver();
+				System.out.println("IE driver is selected and started");
 				}
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
