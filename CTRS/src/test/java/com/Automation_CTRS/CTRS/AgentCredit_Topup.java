@@ -24,6 +24,7 @@ public class AgentCredit_Topup {
 	public boolean acceptNextAlert = true;
 	public StringBuffer verificationErrors = new StringBuffer();
 	Common_Ctrslogin login = new Common_Ctrslogin();
+	
 
 	  @BeforeClass(alwaysRun = true)
 	  public void setUp() throws Exception {
@@ -34,12 +35,11 @@ public class AgentCredit_Topup {
 
 	  @Test
 	  public void testUntitledTestCase() throws Exception {
-		  Thread.sleep(20000);
-		  new WebDriverWait(driver, 30).until(
-					ExpectedConditions.visibilityOfElementLocated(By.xpath("(//a[contains(text(),'Master Forms')])[2]")));
+		Thread.sleep(20000);
+		new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//a[contains(text(),'Master Forms')])[2]")));
 	    driver.findElement(By.xpath("(//a[contains(text(),'Master Forms')])[2]")).click();
-		  driver.findElement(By.xpath("//div[@id='content_master']/ul/li[2]/div/div/a/h3")).click();
-		  driver.findElement(By.id("agent_country")).click();
+		driver.findElement(By.xpath("//div[@id='content_master']/ul/li[2]/div/div/a/h3")).click();
+		driver.findElement(By.id("agent_country")).click();
 	    new Select(driver.findElement(By.id("agent_country"))).selectByVisibleText("SINGAPORE");
 	    driver.findElement(By.id("agent_country")).click();
 	    driver.findElement(By.id("agent_destination")).click();
