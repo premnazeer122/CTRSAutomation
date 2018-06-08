@@ -17,8 +17,8 @@ import com.uitilityfiles.Common_Ctrslogin;
 public class ModuleClick_test {
 
 	// Creating ExtentReport and ExtentTest reference values
-	ExtentReports report;
-	ExtentTest logger;
+	ExtentReports Extent_report;
+	ExtentTest Test_logger;
 
 	public WebDriver driver;
 	CommonMethods call_method = new CommonMethods();
@@ -30,10 +30,10 @@ public class ModuleClick_test {
 		driver = login.Ctrslogin();
 		System.out.println("Logged in");
 		// Create object for Report with filepath
-				report = new ExtentReports("./Reports/CheckModules_clickfunctionality");
+				Extent_report = new ExtentReports("./Reports/CheckModules_clickfunctionality.html");
 
 				// start the test report
-				logger = report.startTest("ClickFunctionality_MainModules");
+				Test_logger = Extent_report.startTest("ClickFunctionality_MainModules");
 
 
 	}
@@ -41,48 +41,50 @@ public class ModuleClick_test {
 	@Test()
 	public void CTRSModules() throws InterruptedException {
 
-		
+		System.out.println("Modules Click Test");
 		System.out.println("Waiting time started");
-		logger.log(LogStatus.INFO, "Click on Booking menu");
+		Test_logger.log(LogStatus.INFO, "Click on Booking menu");
 		Thread.sleep(20000L);
 		System.out.println("After Wait click on booking menu");
 		driver.findElement(By.xpath("(//a[contains(text(),'Book Services')])[2]")).click();
 		Thread.sleep(3000L);
 		driver.switchTo().alert().accept();
-		logger.log(LogStatus.PASS, "Booking menu is Clicked");
+		Test_logger.log(LogStatus.PASS, "Booking menu is Clicked");
 
 		Thread.sleep(3000L);
-		logger.log(LogStatus.INFO, "Click on Master menu");
+		Test_logger.log(LogStatus.INFO, "Click on Master menu");
 		System.out.println("After Wait time click on Master menu");
 		new WebDriverWait(driver, 30).until(
 				ExpectedConditions.visibilityOfElementLocated(By.xpath("(//a[contains(text(),'Master Forms')])[2]")));
 		System.out.println("Wait time stopped");
 		driver.findElement(By.xpath("(//a[contains(text(),'Master Forms')])[2]")).click();
-		logger.log(LogStatus.PASS, "Master Menu is clicked");
+		Test_logger.log(LogStatus.PASS, "Master Menu is clicked");
 
 		Thread.sleep(30000L);
-		logger.log(LogStatus.INFO, "Click on Report menu");
+		Test_logger.log(LogStatus.INFO, "Click on Report menu");
 		System.out.println("After Wait time click on report menu");
 
 		driver.findElement(By.xpath("(//a[contains(text(),'Reports')])[2]")).click();
-		logger.log(LogStatus.PASS, "Clicked on Report menu");
+		Test_logger.log(LogStatus.PASS, "Clicked on Report menu");
 
 		Thread.sleep(20000L);
-		logger.log(LogStatus.INFO, "Click on Permission menu");
+		Test_logger.log(LogStatus.INFO, "Click on Permission menu");
 		System.out.println("After Wait time click on premission menu");
 		driver.findElement(By.xpath("(//a[contains(text(),'User Permission')])[2]")).click();
-		logger.log(LogStatus.PASS, "Clicked on Permission menu");
+		Test_logger.log(LogStatus.PASS, "Clicked on Permission menu");
 
 		Thread.sleep(20000L);
-		logger.log(LogStatus.INFO, "Click on Dashboard menu");
+		Test_logger.log(LogStatus.INFO, "Click on Dashboard menu");
 		driver.findElement(By.xpath("(//a[contains(text(),'Dashboard')])[2]")).click();
-		logger.log(LogStatus.PASS, "Clicked on Dashboard menu");
+		Test_logger.log(LogStatus.PASS, "Clicked on Dashboard menu");
 		Thread.sleep(30000L);
-		report.endTest(logger);
-		report.flush();
+		
+		// End and Flush the data to report
+				Extent_report.endTest(Test_logger);
+				Extent_report.flush();
 		Thread.sleep(2000L);
 		System.out.println("Open the test report");
-		driver.get("D:\\Workspace\\CTRSAutomation\\CTRS\\Reports\\CheckModules_clickfunctionality");
+		driver.get("D:\\Workspace\\CTRSAutomation\\CTRS\\Reports\\CheckModules_clickfunctionality.html");
 		System.out.println("Test report in opened");
 	}
 

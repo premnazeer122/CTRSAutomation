@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Regression" thread-count="5">
-   <test name="ChromeTest">
-<parameter name="browser" value="Chrome" />
-   <classes>
-      <class name="com.Automation_CTRS.CTRS.Ctrs_add_County"/>
-    </classes>
-    </test>
-<test name="FirefoxTest">
-<parameter name="browser" value="Firefox" />
-     <classes>
-      <class name="com.Automation_CTRS.CTRS.NewBooking"/>
-      <class name="com.Automation_CTRS.CTRS.RandomSelectfromDropdown"/>
-    </classes>
-  </test> <!-- sprint1 -->
+		<test name="FirefoxTest">
+		<parameter name="browser" value="Firefox" />
+		<classes>
+			<class name="com.Automation_CTRS.CTRS.TestCase1" />
+			<!-- < <class name="com.Automation_CTRS.CTRS.RandomSelectfromDropdown" />
+			<class name="com.Automation_CTRS.CTRS.Ctrs_add_County" /> -->
+			<class name="com.Automation_CTRS.CTRS.ModuleClick_test"/>
+		</classes>
+	</test> <!-- sprint1 -->
 </suite> <!-- Regression -->

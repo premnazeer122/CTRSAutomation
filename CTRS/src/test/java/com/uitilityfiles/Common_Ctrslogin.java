@@ -17,7 +17,10 @@ public class Common_Ctrslogin {
 	CommonMethods method=new CommonMethods(); 
 	public WebDriver Ctrslogin() throws Exception {
 		
-		driver=Browser.DriverStart(method.getFireox_driver(), method.getURL());
+		/** To use Firefox >> method.getFireox_driver() <<
+		 *  To use Chrome >> method.getChrome_driver() <<
+		*/
+		driver=Browser.DriverStart(method.getChrome_driver(), method.getURL());
 		driver.findElement(username).sendKeys(method.getusername1());
 		driver.findElement(password).sendKeys(method.getpassword1());
 		driver.findElement(Signin).click();

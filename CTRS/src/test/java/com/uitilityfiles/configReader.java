@@ -36,10 +36,8 @@ public class configReader {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Error is ==" + e.getMessage());
-
 		}
 
 	}
-
 	
 }

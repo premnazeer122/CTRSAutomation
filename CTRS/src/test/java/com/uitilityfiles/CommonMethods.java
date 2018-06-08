@@ -123,7 +123,5 @@ public class CommonMethods extends configReader {
 	public TargetLocator switchTo() {
 		return driver.switchTo();
 	}
-	
-	
-	
+		
 }
