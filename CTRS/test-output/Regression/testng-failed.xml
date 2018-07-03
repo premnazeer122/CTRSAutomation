@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Regression]">
+  <parameter name="browser" value="Firefox"/>
+  <test name="FirefoxTest(failed)">
+    <parameter name="browser" value="Firefox"/>
+    <classes>
+      <class name="com.Automation_CTRS.CTRS.TestCase1">
+        <methods>
+          <include name="new_Booking"/>
+          <include name="print_Eticket"/>
+          <include name="Booking_Payment_confirmed"/>
+          <include name="Report_Browser_setUp"/>
+        </methods>
+      </class> <!-- com.Automation_CTRS.CTRS.TestCase1 -->
+      <class name="com.Automation_CTRS.CTRS.ModuleClick_test">
+        <methods>
+          <include name="CTRSModules"/>
+        </methods>
+      </class> <!-- com.Automation_CTRS.CTRS.ModuleClick_test -->
+      <class name="com.Automation_CTRS.CTRS.RandomSelectfromDropdown">
+        <methods>
+          <include name="dropDonw_randomSelect"/>
+          <include name="elasticsearch_dropDown_randomSelect"/>
+        </methods>
+      </class> <!-- com.Automation_CTRS.CTRS.RandomSelectfromDropdown -->
+    </classes>
+  </test> <!-- FirefoxTest(failed) -->
+</suite> <!-- Failed suite [Regression] -->
